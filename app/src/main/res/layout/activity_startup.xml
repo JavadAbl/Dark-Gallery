@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartupActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="Permission"
+        android:scaleType="fitXY"
+        android:src="@drawable/background_permission"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/startup_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="13dp"
+        android:shadowColor="#000000"
+        android:shadowDy="0"
+        android:shadowDx="0"
+        android:shadowRadius="40"
+        android:background="@drawable/selector_startup"
+        android:text="Grant Read Storage Permission"
+        android:textColor="@color/white"
+        tools:ignore="ContentDescription,HardcodedText" />
+
+</FrameLayout>

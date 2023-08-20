@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="media"
+            type="com.javadabl.darkgallery.domain.model.Media" />
+
+        <variable
+            name="fragment"
+            type="com.javadabl.darkgallery.ui.images.ImageRowFragment" />
+
+        <variable
+            name="position"
+            type="int" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        ImagesOnClickData="@{media}"
+        ImagesOnClickFragment="@{fragment}"
+        ImagesOnClickIndex="@{position}"
+        ImagesOnLongClickData="@{media}"
+        ImagesOnLongClickIndex="@{position}"
+        ImagesOnLongClickFragment="@{fragment}"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:background="@drawable/background_item_layout">
+
+
+        <ImageView
+            android:id="@+id/iconChecked"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/background_selected_layout"
+            android:elevation="8dp"
+            android:src="@drawable/icon_checked"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+
+        <ImageView
+            android:id="@+id/images_ImageView"
+            fragment="@{fragment}"
+            setImage="@{media.uri}"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@{media.name}"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+
+        <FrameLayout
+            android:id="@+id/images_BotCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_item_des"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:elevation="10dp"
+                android:padding="9dp"
+                android:src="@drawable/icon_video"
+                tools:ignore="ContentDescription" />
+
+        </FrameLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

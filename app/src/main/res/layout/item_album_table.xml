@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="album"
+            type="com.javadabl.darkgallery.domain.model.Album" />
+
+        <variable
+            name="fragment"
+            type="com.javadabl.darkgallery.ui.album.AlbumTableFragment" />
+
+        <variable
+            name="position"
+            type="int" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rowAlbumCoverCard_CardView"
+        albumOnClick="@{album}"
+        albumOnClickIndex="@{position}"
+        albumOnClickFragment="@{fragment}"
+        albumOnLongClick="@{album}"
+        albumOnLongClickIndex="@{position}"
+        fragment="@{fragment}"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/background_item_layout">
+
+        <ImageView
+            android:id="@+id/iconChecked"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/background_selected_layout"
+            android:elevation="8dp"
+            android:src="@drawable/icon_checked"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/albumImageView"
+            fragment="@{fragment}"
+            setImage="@{album.media.get(0).uri}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@{album.name}"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@id/albumBotCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/albumBotCard"
+            android:layout_width="0dp"
+            android:layout_height="39dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/album_ItemBackground1"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/album_ItemBackground2"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:paddingStart="9dp"
+                android:paddingEnd="9dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#4D000000"
+                    android:ellipsize="end"
+                    android:padding="2dp"
+                    android:shadowColor="@color/text1_shadow"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="15"
+                    android:singleLine="true"
+                    android:text="@{album.name}"
+                    android:textColor="@color/text1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#4D000000"
+                    android:ellipsize="end"
+                    android:padding="2dp"
+                    android:shadowColor="@color/text2_shadow"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="12"
+                    android:singleLine="true"
+                    android:text="@{String.valueOf(album.imagesCount)}"
+                    android:textColor="@color/text2"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

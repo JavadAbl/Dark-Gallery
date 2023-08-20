@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.externalbrowser.ExternalBrowserFragment">
+
+
+        <com.google.android.exoplayer2.ui.StyledPlayerView
+            android:id="@+id/external_VideoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:bar_gravity="center"
+            app:played_color="#BFFF0000"
+            app:surface_type="surface_view" />
+
+
+        <com.javadabl.darkgallery.library.photoview.PhotoView
+            android:id="@+id/external_ImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="centerInside"
+            android:visibility="gone" />
+
+    </FrameLayout>
+</layout>

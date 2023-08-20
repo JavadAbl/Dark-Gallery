@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.browser.BrowserFragment">
+
+    <FrameLayout
+        android:id="@+id/browser_Root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.google.android.exoplayer2.ui.StyledPlayerView
+            android:id="@+id/video_VideoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:bar_gravity="center"
+            app:played_color="#BFFF0000"
+            app:surface_type="surface_view" />
+
+
+        <com.javadabl.darkgallery.library.photoview.PhotoView
+            android:id="@+id/image_ImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="centerInside"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</layout>

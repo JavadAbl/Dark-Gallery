@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/browse_nav_graph"
+    app:startDestination="@id/albumTableFragment">
+
+
+    <fragment
+        android:id="@+id/albumTableFragment"
+        android:name="com.javadabl.darkgallery.ui.album.AlbumTableFragment"
+        android:label="AlbumTableFragment">
+        <action
+            android:id="@+id/action_albumTableFragment_to_imagesFragment"
+            app:destination="@id/imagesFragment"
+            app:enterAnim="@anim/enter_images_from_album"
+            app:exitAnim="@anim/exit_album_to_images"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/enter_album_from_images"
+            app:popExitAnim="@anim/exit_images_to_album"
+            app:popUpTo="@id/albumTableFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/imagesFragment"
+        android:name="com.javadabl.darkgallery.ui.images.ImageRowFragment"
+        android:label="fragment_image_row"
+        tools:layout="@layout/fragment_images">
+        <action
+            android:id="@+id/action_imagesFragment_to_imageFragment"
+            app:destination="@id/imageFragment"
+            app:enterAnim="@anim/enter_image_from_images"
+            app:exitAnim="@anim/exit_images_to_image"
+            app:popEnterAnim="@anim/enter_images_from_image"
+            app:popExitAnim="@anim/exit_image_to_images"
+            app:popUpTo="@id/imagesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.javadabl.darkgallery.ui.image.ImageFragment"
+        android:label="ImageFragment" />
+</navigation>

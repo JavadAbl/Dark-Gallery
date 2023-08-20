@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="appbar_BackgroundImages">
+        <item>@drawable/album_highlight</item>
+    </array>
+
+</resources>

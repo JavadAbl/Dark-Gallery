@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog_Root"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:background="@color/black">
+
+
+    <ImageView
+        android:id="@+id/dialog_Background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+
+    <FrameLayout
+        android:id="@+id/dialog_NameLayout"
+        style="@style/dialog_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/dialog_ResolutionLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@drawable/background_dialog_layout"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/dialog_title"
+                android:text="Name:"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dialog_NameContent"
+                style="@style/dialog_content"
+                android:text=""
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/dialog_ResolutionLayout"
+        style="@style/dialog_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/dialog_PathLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_NameLayout">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@drawable/background_dialog_layout"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/dialog_title"
+                android:text="Resolution:"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/dialog_ResolutionContent"
+                style="@style/dialog_content"
+                android:text=""
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/dialog_PathLayout"
+        style="@style/dialog_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/dialog_SizeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_ResolutionLayout">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@drawable/background_dialog_layout"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <TextView
+                style="@style/dialog_title"
+                android:text="Path:"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/dialog_PathRow"
+                style="@style/dialog_content"
+                android:text=""
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/dialog_SizeLayout"
+        style="@style/dialog_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/dialog_DateLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_PathLayout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@drawable/background_dialog_layout"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/dialog_title"
+                android:text="File Size:"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/dialog_SizeRow"
+                style="@style/dialog_content"
+                android:text=""
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/dialog_DateLayout"
+        style="@style/dialog_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_SizeLayout">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@drawable/background_dialog_layout"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/dialog_title"
+                android:text="Date:"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/dialog_DateRow"
+                style="@style/dialog_content"
+                android:text=""
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
